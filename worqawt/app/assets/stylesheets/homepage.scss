@@ -1,0 +1,29 @@
+.hero-content {
+  length: 100vh;
+  height: 80vh;
+  position: relative;
+  background-image: url("https://www.verdict.co.uk/wp-content/uploads/2017/05/shutterstock_326627258.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .hero-message {
+    padding-bottom: 20vh;
+
+    h1,
+    p {
+      color: #f4d941;
+    }
+
+    h1 {
+      font-size: 5em;
+    }
+
+    p {
+      font-size: 2rem;
+    }
+  }
+}
