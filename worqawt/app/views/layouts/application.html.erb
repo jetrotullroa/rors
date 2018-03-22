@@ -10,6 +10,19 @@
 
   <body>
     <%= render 'layouts/navbar' %>
-    <%= yield %>
+    <% if !flash.empty? %>
+      <section class="warning-messages">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </section>
+    <% end %>
+
+    <% if !current_page?(root_path) %>
+      <div class="container">
+    <% else %>
+      <div>
+    <% end %>
+      <%= yield %>
+      </div>
   </body>
 </html>
