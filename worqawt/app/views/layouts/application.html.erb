@@ -11,10 +11,13 @@
   <body>
     <%= render 'layouts/navbar' %>
     <% if !flash.empty? %>
-      <section class="warning-messages">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-      </section>
+      <% flash.each do |key, value| %>
+        <section class="warning-messages">
+          <div class="alert alert-<%= key == "alert" ? "danger" : "info" %>">
+            <%= value %>
+          </div>
+        </section>
+      <% end %>
     <% end %>
 
     <% if !current_page?(root_path) %>
