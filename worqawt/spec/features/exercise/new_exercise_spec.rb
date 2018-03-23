@@ -10,7 +10,7 @@ RSpec.feature "new Exercise" do
     visit "/"
 
     click_link "Dashboard"
-    click_button "New Workout"
+    click_link "New Workout"
     expect(page).to have_link("Back")
 
     fill_in "Duration", with: 70

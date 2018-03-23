@@ -2,4 +2,15 @@
   position: relative;
   width: 640px;
   margin: 0 auto;
+
+  .help-block {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #721c24;
+  }
+
+  .hint-block {
+    font-size: 0.85rem;
+    font-style: italic;
+  }
 }
