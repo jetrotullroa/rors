@@ -15,16 +15,18 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>70</td>
-          <td>Weight Lifting</td>
-          <td>2016-11-23</td>
-          <td>
-            <%= link_to "Edit", edit_dashboard_exercise_path(1), class: "btn btn-primary btn-sm" %>
-            &nbsp;
-            <%= link_to "Delete", edit_dashboard_exercise_path(1), class: "btn btn-danger btn-sm" %>
-          </td>
-        </tr>
+        <% @exercises.each do |exercise| %>
+          <tr>
+            <td><%= exercise.duration %></td>
+            <td><%= exercise.workout %></td>
+            <td><%= exercise.created_at.strftime("%d %B %Y | %H:%M:%S") %></td>
+            <td>
+              <%= link_to "Edit", edit_dashboard_exercise_path(1), class: "btn btn-primary btn-sm" %>
+              &nbsp;
+              <%= link_to "Delete", edit_dashboard_exercise_path(1), class: "btn btn-danger btn-sm" %>
+            </td>
+          </tr>
+        <% end %>
       </tbody>
     </table>
   </div>
