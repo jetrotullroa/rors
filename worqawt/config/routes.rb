@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
   namespace :dashboard do
     root to: "dashboard#index"
-    resources :exercises
+    resources :exercises, except: :index
   end
 end

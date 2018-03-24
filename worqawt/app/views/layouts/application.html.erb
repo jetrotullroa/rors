@@ -13,7 +13,7 @@
     <div class="alert-messages">
       <% if !flash.empty? %>
         <% flash.each do |key, value| %>
-            <div class="alert alert-<%= key == "alert" ? "danger" : "info" %>">
+            <div class="alert alert-<%= key == "error" ? "danger" : "info" %>">
               <%= value %>
               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
