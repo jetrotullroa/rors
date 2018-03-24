@@ -14,18 +14,18 @@ RSpec.feature "new Exercise" do
     expect(page).to have_link("Back")
 
     fill_in "Duration", with: 70
-    fill_in "Workout Details", with: "Weight Lifting"
-    click_button "Create Exercise"
+    select("Weight Lifting", from: "exercise_workout")
+    click_button "Create Workout"
 
     exercise = Exercise.last
 
-    expect(current_path).to eq(dashboard_path(@john, exercise))
+    expect(current_path).to eq(dashboard_root_path)
     expect(page).to have_content("Exercise has been completed.")
 
     expect(exercise.user_id).to eq(@john.id)
-    expect(page).to have_content("#{exercise.duration}")
+    expect(page).to have_content("#{exercise.duration} mins")
     expect(page).to have_content("#{exercise.workout}")
-    expect(page).to have_content("#{exercise.created_at}")
+    expect(page).to have_content("#{exercise.created_at.strftime("%d %B %Y | %H:%M:%S")}")
 
   end
 end
