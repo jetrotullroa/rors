@@ -28,4 +28,15 @@ RSpec.feature "new Exercise" do
     expect(page).to have_content("#{exercise.created_at.strftime("%d %B %Y | %H:%M:%S")}")
 
   end
+
+  scenario do
+    visit "/"
+
+    click_link "Dashboard"
+    click_link "New Workout"
+    click_button "Create Workout"
+
+    expect(current_path).to eq(dashboard_exercises_path)
+    expect(page).to have_content("Workout was not created.")
+  end
 end
