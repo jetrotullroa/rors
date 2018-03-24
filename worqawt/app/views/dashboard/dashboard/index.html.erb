@@ -1,9 +1,9 @@
 <div class="exercise card col-md-12">
   <div class="card-body">
     <div class="card-title">
-      <h2>Exercises
+      <h3>Exercises
         <%= link_to "New Workout", new_dashboard_exercise_path, class: "btn btn-default worqawt-button" %>
-      </h2>
+      </h3>
     </div>
     <table class="table table-striped">
       <thead>
@@ -17,7 +17,7 @@
       <tbody>
         <% @exercises.each do |exercise| %>
           <tr>
-            <td><%= exercise.duration %></td>
+            <td><%= exercise.duration %> mins</td>
             <td><%= exercise.workout %></td>
             <td><%= exercise.created_at.strftime("%d %B %Y | %H:%M:%S") %></td>
             <td>
