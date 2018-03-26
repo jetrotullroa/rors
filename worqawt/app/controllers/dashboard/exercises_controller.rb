@@ -17,6 +17,6 @@ class Dashboard::ExercisesController < ApplicationController
   private
 
     def exercise_params
-      params.require(:exercise).permit(:duration, :workout)
+      params.require(:exercise).permit(:duration, :workout, :workout_date)
     end
 end

@@ -10,10 +10,17 @@
     </div>
   <% end %>
   <%= f.input :duration, label: "Duration *" %>
-  <%= f.input :workout,
-    priority: [ "Weight Lifting" ],
-    collection: [ "Weight Lifting", "Jogging / Running", "Bicycling", "Aerobics", "MMA / Boxing" ],
-    label: "Workout *"
-  %>
+    <div class="row">
+      <div class="col-md-10">
+        <%= f.input :workout,
+        priority: [ "Weight Lifting" ],
+        collection: [ "Weight Lifting", "Jogging / Running", "Bicycling", "Aerobics", "MMA / Boxing" ],
+        label: "Workout *"
+        %>
+      </div>
+      <div class="col-md-2">
+        <%= f.input :workout_date, as: :string, input_html: { id: "datepicker" } %>
+      </div>
+    </div>
   <%= f.button :submit, "Create Workout", class: "btn worqawt-button" %>
 <% end %>
