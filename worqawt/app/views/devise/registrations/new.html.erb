@@ -5,6 +5,14 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <div class="user-fullname row">
+      <div class="col-md-6">
+        <%= f.input :first_name, label: "First Name" %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :last_name, label: "Last Name" %>
+      </div>
+    </div>
     <%= f.input :email, autofocus: true, label: "Email *" %>
     <%= f.input :password, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), label: "Password *" %>
     <%= f.input :password_confirmation, label: "Confirm Password *" %>

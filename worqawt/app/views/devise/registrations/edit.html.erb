@@ -5,6 +5,14 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
+      <div class="user-fullname row">
+        <div class="col-md-6">
+          <%= f.input :first_name %>
+        </div>
+        <div class="col-md-6">
+          <%= f.input :last_name %>
+        </div>
+      </div>
       <%= f.input :email, required: true, autofocus: true %>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -17,7 +25,7 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Update" class: "btn btn-block worqawt-button" %>
+      <%= f.button :submit, "Update", class: "btn btn-block worqawt-button" %>
     </div>
   <% end %>
 
