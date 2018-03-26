@@ -4,5 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :exercises       
+  has_many :exercises
+
+  def full_name
+    if first_name.nil? || last_name.nil?
+      "#{email}"
+    else
+      "#{first_name} #{last_name}"
+    end
+  end
 end
