@@ -19,7 +19,7 @@
           <tr>
             <td><%= exercise.duration %> mins</td>
             <td><%= exercise.workout %></td>
-            <td><%= exercise.created_at.strftime("%d %B %Y | %H:%M:%S") %></td>
+            <td><%= format_workout_date(exercise.workout_date) %></td>
             <td>
               <%= link_to "Edit", edit_dashboard_exercise_path(1), class: "btn btn-primary btn-sm" %>
               &nbsp;
