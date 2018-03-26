@@ -1,15 +1,7 @@
 <div class="card new-workout">
   <div class="card-body">
     <h3 class="card-title">New Workout</h3>
-    <%= simple_form_for [:dashboard, @exercise] do |f| %>
-      <%= f.input :duration, label: "Duration *" %>
-      <%= f.input :workout,
-        priority: [ "Weight Lifting" ],
-        collection: [ "Weight Lifting", "Jogging / Running", "Bicycling", "Aerobics", "MMA / Boxing" ],
-        label: "Workout *"
-      %>
-      <%= f.button :submit, "Create Workout", class: "btn worqawt-button" %>
-    <% end %>
+    <%= render 'form_workout' %>
   </div>
 </div>
 <%= link_to "Back", dashboard_root_path, class: "btn btn-link" %>

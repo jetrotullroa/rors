@@ -37,6 +37,8 @@ RSpec.feature "new Exercise" do
     click_button "Create Workout"
 
     expect(current_path).to eq(dashboard_exercises_path)
-    expect(page).to have_content("Workout was not created.")
+    expect(page).to have_content("Workout cannot be saved. Please see 2 errors below")
+    expect(page).to have_content("Duration can't be blank")
+    expect(page).to have_content("Workout can't be blank")
   end
 end
