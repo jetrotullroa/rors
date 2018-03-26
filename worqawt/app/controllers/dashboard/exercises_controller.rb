@@ -9,7 +9,6 @@ class Dashboard::ExercisesController < ApplicationController
       redirect_to dashboard_root_path
       flash[:notice] = "Exercise has been completed."
     else
-      flash[:error] =  "Workout was not created."
       render :new
     end
   end

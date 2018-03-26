@@ -1,0 +1,19 @@
+<%= simple_form_for [:dashboard, @exercise] do |f| %>
+  <% if @exercise.errors.any? %>
+    <div class="workout-error alert alert-danger">
+        <strong>Workout cannot be saved. Please see <%= pluralize(@exercise.errors.count, "error")%> below:</strong>
+        <ul>
+        <% @exercise.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+    </div>
+  <% end %>
+  <%= f.input :duration, label: "Duration *" %>
+  <%= f.input :workout,
+    priority: [ "Weight Lifting" ],
+    collection: [ "Weight Lifting", "Jogging / Running", "Bicycling", "Aerobics", "MMA / Boxing" ],
+    label: "Workout *"
+  %>
+  <%= f.button :submit, "Create Workout", class: "btn worqawt-button" %>
+<% end %>
