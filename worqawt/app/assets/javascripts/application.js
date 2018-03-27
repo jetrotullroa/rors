@@ -14,5 +14,6 @@
 //= require jquery-ui/datepicker
 //= require popper
 //= require bootstrap
+//= require d3
 //= require jquery_ujs
 //= require_tree .

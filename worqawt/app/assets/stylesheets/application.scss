@@ -2,8 +2,10 @@
 *= require jquery-ui/datepicker
 */
 
-@import "jquery-ui/datepicker.css";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "jquery-ui/datepicker.css";
 @import "errors";
 @import "navbar";
 @import "homepage";

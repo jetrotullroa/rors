@@ -1,33 +1,42 @@
-<div class="exercise card col-md-12">
-  <div class="card-body">
-    <div class="card-title">
-      <h3>Exercises
-        <%= link_to "New Workout", new_dashboard_exercise_path, class: "btn btn-default worqawt-button" %>
-      </h3>
-    </div>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Duration</th>
-          <th>Workout Details</th>
-          <th>Workout Date</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @exercises.each do |exercise| %>
+<div class="row">
+  <div class="exercise-index card col-md-12">
+    <div class="card-body">
+      <div class="card-title">
+        <h3>Exercises
+          <%= link_to "New Workout", new_dashboard_exercise_path, class: "btn btn-default worqawt-button" %>
+        </h3>
+      </div>
+      <table class="table table-striped">
+        <thead>
           <tr>
-            <td><%= exercise.duration %> mins</td>
-            <td><%= exercise.workout %></td>
-            <td><%= format_workout_date(exercise.workout_date) %></td>
-            <td>
-              <%= link_to "Edit", edit_dashboard_exercise_path(1), class: "btn btn-primary btn-sm" %>
-              &nbsp;
-              <%= link_to "Delete", edit_dashboard_exercise_path(1), class: "btn btn-danger btn-sm" %>
-            </td>
+            <th>Duration</th>
+            <th>Workout Details</th>
+            <th>Workout Date</th>
+            <th>Action</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <% @exercises.each do |exercise| %>
+            <tr>
+              <td><%= exercise.duration %> mins</td>
+              <td><%= exercise.workout %></td>
+              <td><%= format_workout_date(exercise.workout_date) %></td>
+              <td>
+                <%= link_to "Edit", edit_dashboard_exercise_path(1), class: "btn btn-primary btn-sm" %>
+                &nbsp;
+                <%= link_to "Delete", edit_dashboard_exercise_path(1), class: "btn btn-danger btn-sm" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  &nbsp;
+  <div class="exercise-chart card col-md-12">
+    <div class="card-body exercise-graph">
+      <div class="card-title"><h3>Workout Chart</h3></div>
+      <%= content_tag :div, "", id: "exercise-chart", data: { workouts: @exercises } %>
+    </div>
   </div>
 </div>
