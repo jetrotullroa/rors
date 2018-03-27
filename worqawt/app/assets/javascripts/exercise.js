@@ -21,7 +21,7 @@ var drawChart = function() {
   var parseTime = d3.timeParse("%Y-%m-%d");
 
   var workoutFn = function(d) {
-    return d.duration_in_min;
+    return d.duration;
   };
   var dateFn = function(d) {
     return parseTime(d.workout_date);
@@ -43,12 +43,12 @@ var drawChart = function() {
       return x(d.workout_date);
     })
     .y(function(d) {
-      return y(d.duration_in_min);
+      return y(d.duration);
     });
 
   data.forEach(function(d) {
     d.workout_date = parseTime(d.workout_date);
-    d.duration_in_min = +d.duration_in_min;
+    d.duration = +d.duration;
   });
 
   var svg = d3
