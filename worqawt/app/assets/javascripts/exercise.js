@@ -1,6 +1,7 @@
 $(document).ready(function() {
   $("#datepicker").datepicker({
-    dateFormat: "yy-mm-dd"
+    dateFormat: "yy-mm-dd",
+    maxDate: new Date()
   });
 
   drawChart();
