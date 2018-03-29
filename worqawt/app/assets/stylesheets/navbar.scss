@@ -1,5 +1,15 @@
 .navbar {
+  position: relative;
+  z-index: 100;
+  top: 0;
+  margin: 0 auto;
+  background-color: transparent;
   .navbar-brand {
     color: #f4d941;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+  }
+  .nav-link {
+    color: #fff;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
   }
 }
