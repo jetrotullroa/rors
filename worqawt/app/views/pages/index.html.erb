@@ -1,26 +1,16 @@
-<div class="fluid hero-content">
+<section class="fluid hero-content">
   <div class="hero-message text-center">
     <h1>Workout Lounge!</h1>
     <p>Show off your workout.</p>
     <%= link_to "Register Now", new_user_registration_path, class: "btn worqawt-button" %>
   </div>
-</div>
-<div class="athletes">
+</section>
+<section class="athletes">
   <h1 class="text-center">Athletes</h1>
   <div class="row">
-    <% @athletes.each do |athlete| %>
-      <div class="col-md-3">
-        <div class="card">
-          <div class="card-body">
-            <div class="card-title">
-              <h4><%= athlete.full_name %></h4>
-            </div>
-          </div>
-          <div class="card-footer">
-            <%= link_to "View Profile", "#", class: "btn btn-sm worqawt-button" %>
-          </div>
-        </div>
-      </div>
-    <% end %>
+    <%= render 'layouts/athletes_card' %>
   </div>
-</div>
+  <div class="view-more-athletes text-center">
+    <%= link_to "View more athletes", athletes_path, class: "btn btn-lg worqawt-button" %>
+  </div>
+</section>
