@@ -1,14 +1,16 @@
-<section class="fluid hero-content">
+<section class="container-fluid hero-content">
   <div class="hero-message text-center">
     <h1>Workout Lounge!</h1>
     <p>Show off your workout.</p>
     <%= link_to "Register Now", new_user_registration_path, class: "btn worqawt-button" %>
   </div>
 </section>
-<section class="athletes">
+<section class="container athletes">
   <h1 class="text-center">Athletes</h1>
-  <div class="row">
+  <div class="athlethes-profiles">
+    <div class="row">
     <%= render 'layouts/athletes_card' %>
+    </div>
   </div>
   <div class="view-more-athletes text-center">
     <%= link_to "View more athletes", athletes_path, class: "btn btn-lg worqawt-button" %>
