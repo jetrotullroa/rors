@@ -1,11 +1,9 @@
 <% @athletes.each do |athlete| %>
-  <div class="col-md-3">
+  <div class="col-md-4">
     <div class="card">
       <div class="card-body">
-        <div class="card-title">
-          <h1><%= athlete.full_name %></h1>
-        </div>
-        <p class="card-text"><strong>Latest Workpout</strong></p>
+        <h4 class="card-title"><%= athlete.full_name %></h4>
+        <p class="card-text"><strong>Latest Workout</strong></p>
         <p class="card-text"><%= athlete.exercises.last.workout %></p>
         <p class="card-text"><%= athlete.exercises.last.duration %> min</p>
         <p class="card-text"><%= format_workout_date(athlete.exercises.last.workout_date) %></p>
