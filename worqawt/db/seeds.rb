@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+users = User.all
+
+
+users.each do |user|
+  Exercise.create(user_id: user.id, workout: "Bicycling", duration: user.id, workout_date: "2018-03-#{user.id}")
+end
