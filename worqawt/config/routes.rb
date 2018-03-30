@@ -4,8 +4,12 @@ Rails.application.routes.draw do
 
   root to: "pages#index"
 
-  resources :athletes, only: :index
-  
+  resources :athletes, only: :index do
+    collection do
+      post :search, to: 'athletes#search'
+    end
+  end
+
   namespace :dashboard do
     root to: "dashboard#index"
     resources :exercises, except: :index

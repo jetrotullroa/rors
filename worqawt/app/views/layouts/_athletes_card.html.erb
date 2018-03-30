@@ -4,9 +4,9 @@
       <div class="card-body">
         <h4 class="card-title"><%= athlete.full_name %></h4>
         <p class="card-text"><strong>Latest Workout</strong></p>
-        <p class="card-text"><%= athlete.exercises.last.workout %></p>
-        <p class="card-text"><%= athlete.exercises.last.duration %> min</p>
-        <p class="card-text"><%= format_workout_date(athlete.exercises.last.workout_date) %></p>
+        <p class="card-text"><%= athlete.exercises.latest_workout.workout %></p>
+        <p class="card-text"><%= athlete.exercises.latest_workout.duration %> min</p>
+        <p class="card-text"><%= format_workout_date(athlete.exercises.latest_workout.workout_date) %></p>
       </div>
     </div>
   </div>

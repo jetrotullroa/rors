@@ -9,7 +9,12 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
       </li>
+      <%= form_tag(search_athletes_path, role: "search", class: "form-inline", method: :post) do %>
+        <%= text_field_tag :search_name, nil, placeholder: "Search Athlete", class: "form-control" %>
+        <%= submit_tag "Search", class: "btn btn-outline-primary" %>
+      <% end %>
     </ul>
+
     <ul class="navbar-nav ml-auto">
       <% if user_signed_in? %>
         <li class="nav-item">

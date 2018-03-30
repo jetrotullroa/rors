@@ -1,0 +1,19 @@
+<div class="athletes">
+  <h1 class="text-center">Athletes</h1>
+  <div class="athlethes-profiles">
+    <div class="row">
+      <% if @athletes.blank? %>
+        <div class="col-md-12">
+          <h5 class="text-center">No Athletes found.</h5>
+        </div>
+      <% else %>
+        <%= render 'layouts/athletes_card' %>
+      <% end %>
+    </div>
+    <div class="row">
+      <div class="col-md-12 pagination">
+          <%= paginate @athletes %>
+      </div>
+    </div>
+  </div>
+</div>
